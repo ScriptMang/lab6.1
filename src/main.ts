@@ -9,17 +9,16 @@ const productList: Array<Product> = [computer, software];
 
 let totalCost: number = 0; 
 for (let item of productList){
-    console.log(item.displayDetails());
     let weight: string = (item as PhysicalProduct).weight;
     let fileSize: string = (item as DigitalProduct).fileSize;
     
     if (weight !== undefined) {
-        console.log(`${item.name} has a weight of ${weight}`);
+        console.log( item.displayDetails() + ` weight: ${weight}`);
+        console.log( "finalPrice: " + calculateTax(item));
     }
 
     if (fileSize !== undefined){
-        console.log(`${item.name} has a file-size of ${fileSize}`);
+         console.log( item.displayDetails() + ` fileSize: ${fileSize}`);
+        console.log( "finalPrice: " + calculateTax(item));
     }
 }
-
-console.log(`The total cost items: ${totalCost}`);
