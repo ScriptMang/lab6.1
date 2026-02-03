@@ -7,7 +7,7 @@ const computer = new PhysicalProduct("123456", "computer", 500, 50);
 const  software = new DigitalProduct("789113","gannt-chart software", 20, 800);
 const productList: Array<Product> = [computer, software]; 
 
-let totalCost: number = 0; 
+
 for (let item of productList){
     let weight: string = (item as PhysicalProduct).weight;
     let fileSize: string = (item as DigitalProduct).fileSize;
@@ -22,4 +22,7 @@ for (let item of productList){
          console.log( item.displayDetails() + ` fileSize: ${fileSize}`);
         console.log( "finalPrice: " + calculateTax(item));
     }
+
+
+
 }
