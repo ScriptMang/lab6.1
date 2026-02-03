@@ -14,7 +14,8 @@ for (let item of productList){
     
     if (weight !== undefined) {
         console.log( item.displayDetails() + ` weight: ${weight}`);
-        console.log( "finalPrice: " + calculateTax(item));
+        item.price = (item as PhysicalProduct).applyDiscount(); // 25% default discount for physical items
+        console.log( "finalPrice w/ discount: " + calculateTax(item).toFixed(2));
     }
 
     if (fileSize !== undefined){
