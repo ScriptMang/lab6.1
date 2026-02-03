@@ -20,7 +20,7 @@ for (let item of productList){
 
     if (fileSize !== undefined){
          console.log( item.displayDetails() + ` fileSize: ${fileSize}`);
-        console.log( "finalPrice: " + calculateTax(item));
+        console.log( "finalPrice: " + calculateTax(item).toFixed(2));
     }
 
 
