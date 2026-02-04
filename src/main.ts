@@ -1,7 +1,8 @@
 import { PhysicalProduct } from './models/PhysicalProduct.ts';
 import { DigitalProduct } from './models/DigitalProduct.ts';
 import { Product } from './models/Product.ts';
-import { calculateTax} from './utils/taxCalculator.ts'
+import { calculateTax} from './utils/taxCalculator.ts';
+import { FilterProduct } from './models/FilterProducts.ts';
 
 const computer = new PhysicalProduct("123456", "computer", 500, 50);
 const  software = new DigitalProduct("789113","gannt-chart software", 20, 800);
@@ -22,7 +23,9 @@ for (let item of productList){
          console.log( item.displayDetails() + ` fileSize: ${fileSize}`);
         console.log( "finalPrice: " + calculateTax(item).toFixed(2));
     }
-
-
-
 }
+ const filterByPrice = new FilterProduct(false, true);
+ const sortedList =  filterByPrice.sortProducts(productList);
+ sortedList.forEach(elem => {
+    console.log(`elem in sortlist: ${elem.displayDetails()}`);
+});

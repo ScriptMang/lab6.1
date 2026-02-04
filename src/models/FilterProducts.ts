@@ -1,6 +1,5 @@
 import {Product} from '../models/Product.ts';
-
-class FilterProduct {
+export class FilterProduct {
     filterByName: boolean
     filterByPrice: boolean    
 
