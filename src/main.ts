@@ -4,7 +4,7 @@ import { Product } from './models/Product.ts';
 import { calculateTax} from './utils/taxCalculator.ts';
 import { FilterProduct } from './models/FilterProducts.ts';
 
-const computer = new PhysicalProduct("123456", "computer", 500, 50);
+const computer = new PhysicalProduct("123456", "computer", 500, 50, 10);
 const  software = new DigitalProduct("789113","gannt-chart software", 20, 800);
 const productList: Array<Product> = [computer, software]; 
 
