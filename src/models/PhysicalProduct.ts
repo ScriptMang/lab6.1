@@ -31,4 +31,7 @@ export class PhysicalProduct extends Product implements DiscountableProduct {
         return `${this._weight} kg`;
     }
 
+    get quantity(): number {
+        return this._quantity;
+    }
 }
