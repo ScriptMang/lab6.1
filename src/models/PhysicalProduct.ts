@@ -6,17 +6,19 @@ interface DiscountableProduct {
 
 export class PhysicalProduct extends Product implements DiscountableProduct {
     _weight: number;
+    _quantity: number;
 
-    constructor(sku: string, name: string, price: number, weight: number) {
+    constructor(sku: string, name: string, price: number, weight: number, quantity: number) {
         super(sku, name, price);
         this._weight = weight;
+        this._quantity = quantity;
     }
 
     getPriceWithTax(): number {
         return this.price * 1.10;
     }
 
-    applyDiscount(): number {      
+    applyDiscount(): number {
         return  this.price - (this.price * .25);
     }
 
