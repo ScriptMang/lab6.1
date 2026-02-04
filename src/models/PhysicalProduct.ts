@@ -19,7 +19,12 @@ export class PhysicalProduct extends Product implements DiscountableProduct {
     }
 
     applyDiscount(): number {
-        return  this.price - (this.price * .25);
+        if (this._quantity > 14) {
+             return  this.price - (this.price * .25);
+        } else if (this._quantity > 9){
+            return  this.price - (this.price * .15);
+        }
+        return  this.price;
     }
 
     get weight(): string {
