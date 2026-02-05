@@ -12,9 +12,10 @@ const productList: Array<Product> = [computer, software];
 for (let item of productList){
     let weight: string = (item as PhysicalProduct).weight;
     let fileSize: string = (item as DigitalProduct).fileSize;
-    
+    let quantity: number = (item as PhysicalProduct).quantity;
+
     if (weight !== undefined) {
-        console.log( item.displayDetails() + ` weight: ${weight}`);
+        console.log( item.displayDetails() + ` quantity: ${quantity}` + ` weight: ${weight}`);
         item.price = (item as PhysicalProduct).applyDiscount(); // 25% default discount for physical items
         console.log( "finalPrice w/ discount: " + calculateTax(item).toFixed(2));
     }
