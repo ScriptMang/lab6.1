@@ -16,8 +16,10 @@ for (let item of productList){
 
     if (weight !== undefined) {
         console.log( item.displayDetails() + ` quantity: ${quantity}` + ` weight: ${weight}`);
-        item.price = (item as PhysicalProduct).applyDiscount(); // 25% default discount for physical items
+         const oldPrice = item.price;
+        item.price = (item as PhysicalProduct).applyDiscount(); 
         console.log( "finalPrice w/ discount: " + calculateTax(item).toFixed(2));
+        item.price = oldPrice;
     }
 
     if (fileSize !== undefined){
