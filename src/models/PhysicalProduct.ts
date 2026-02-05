@@ -15,7 +15,7 @@ export class PhysicalProduct extends Product implements DiscountableProduct {
     }
 
     getPriceWithTax(): number {
-        return this.price * 1.10;
+        return this.price * this._quantity *1.10;
     }
 
     applyDiscount(): number {
