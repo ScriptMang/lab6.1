@@ -25,18 +25,20 @@ for (let item of productList){
         console.log( "finalPrice: " + calculateTax(item).toFixed(2));
     }
 }
+console.log();
  const filterByPrice = new FilterProduct(false, true);
  const sortedList =  filterByPrice.sortProducts(productList);
+ console.log("Sorted Product-List: ");
  sortedList.forEach(elem => {
     let weight: string = (elem as PhysicalProduct).weight;
     let fileSize: string = (elem as DigitalProduct).fileSize;
 
-    if (weight === undefined) {
+    if (weight !== undefined) {
         let quantity: number = (elem as PhysicalProduct).quantity;
-        console.log(`elem in sortlist:` + elem.displayDetails()+ ` quantity: ${quantity} ` + ` weight: ${weight}`);
+        console.log(elem.displayDetails()+ ` quantity: ${quantity} ` + ` weight: ${weight}`);
     }
 
     if (fileSize !== undefined) {
-         console.log( elem.displayDetails() + ` fileSize: ${fileSize}`);
+         console.log(elem.displayDetails() + ` fileSize: ${fileSize}`);
     }
 });
