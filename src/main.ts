@@ -28,5 +28,15 @@ for (let item of productList){
  const filterByPrice = new FilterProduct(false, true);
  const sortedList =  filterByPrice.sortProducts(productList);
  sortedList.forEach(elem => {
-    console.log(`elem in sortlist: ${elem.displayDetails()}`);
+    let weight: string = (elem as PhysicalProduct).weight;
+    let fileSize: string = (elem as DigitalProduct).fileSize;
+
+    if (weight === undefined) {
+        let quantity: number = (elem as PhysicalProduct).quantity;
+        console.log(`elem in sortlist:` + elem.displayDetails()+ ` quantity: ${quantity} ` + ` weight: ${weight}`);
+    }
+
+    if (fileSize !== undefined) {
+         console.log( elem.displayDetails() + ` fileSize: ${fileSize}`);
+    }
 });
